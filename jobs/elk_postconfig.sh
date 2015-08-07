@@ -32,6 +32,9 @@ _sslKey=/etc/pki/tls/private/logstash-forwarder.key
 _sslCrt=/etc/pki/tls/certs/logstash-forwarder.crt
 openssl req -x509 -days 3650 -batch -nodes -newkey rsa:2048 -keyout ${_sslKey} -out ${_sslCrt} -subj /CN=syslog
 
+chmod 644 $_sslKey
+chmod 644 $_sslCrt
+
 # Logstash post config
 setfacl -m u:logstash:r /var/log/{messages,secure,yum.log}
 cp ../logstash_agents/* /etc/logstash/conf.d/
