@@ -14,6 +14,7 @@
 # Default-Start: 2 3 4 5
 # Default-Stop: 0 1 6
 # Short-Description: start and stop kibana
+# Borrowed from: https://github.com/Xaway/script/blob/master/init_kibana
 ### END INIT INFO
 #
 #
